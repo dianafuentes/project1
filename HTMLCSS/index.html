@@ -5,15 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    .custom-red {
+      color: #FF5733;
+      animation: 3s ease-in 1s 2 reverse both paused slidein;
+    }
+    .custom-border {
+      border: solid green 10px;
+    }
+    #list-item-two {
+      font-size: 5rem;
+    }
+
+    .polling_message {
+      color: white;
+      float: left;
+      margin-right: 2%;
+    }
+
+    .view_port {
+      background-color: black;
+      height: 25px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .cylon_eye {
+      background-color: red;
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, .9) 25%,
+          rgba(0, 0, 0, .1) 50%,
+          rgba(0, 0, 0, .9) 75%);
+      color: white;
+      height: 100%;
+      width: 20%;
+
+      -webkit-animation: 4s linear 0s infinite alternate move_eye;
+              animation: 4s linear 0s infinite alternate move_eye;
+    }
+
+    @-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+            @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+    </style>
 </head>
 <body>
   <h1>This is a title</h1>
   <h2>this is a title 2</h2>
-  <p>This is a paragraph with a <br/>To another line</p>   
-  <p>This i a list</p>
+  <p class="custom-red custom-border">This is a paragraph with a <br/>To another line</p>   
+  <p class="custom-red">This i a list</p>
   <ul>
     <li>list Item</li>
-    <li>list Item 2 with a link <a href="google.com">go to google.com</a></li>
+    <li id="list-item-two">list Item 2 with a link <a href="google.com">go to google.com</a></li>
   </ul>
+  <div class="view_port">
+    <div class="polling_message">
+      Listening for dispatches
+    </div>
+    <div class="cylon_eye"></div>
+  </div>
 </body>
 </html>
