@@ -47,14 +47,37 @@
     @-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
             @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
     </style>
+    <script>
+        function onElementHover(mouseTarget) {
+          mouseTarget.addEventListener('mouseenter', function() {
+            mouseTarget.style.border = '5px dotted orange';
+          });
+          mouseTarget.addEventListener('mouseleave', function() {
+            mouseTarget.style.border = '1px solid #333';
+          });
+        }
+        window.onload = function() {
+          var elementVar = document.querySelectorAll('.red-text');
+          
+          //loop
+          for(var i = 0; i < elementVar.length; i++) {
+            // elementVar[0];
+            // elementVar[0];
+            var currentDOMElement = elementVar[i];
+            // DOM ELEMENT
+            onElementHover(currentDOMElement);
+          }
+          // ...
+        };
+    </script>
 </head>
 <body>
   <h1>This is a title</h1>
   <h2>this is a title 2</h2>
   <p class="custom-red custom-border">This is a paragraph with a <br/>To another line</p>   
-  <p class="custom-red">This i a list</p>
+  <p class="custom-red red-text">This i a list</p>
   <ul>
-    <li>list Item</li>
+    <li class="red-text">list Item</li>
     <li id="list-item-two">list Item 2 with a link <a href="google.com">go to google.com</a></li>
   </ul>
   <div class="view_port">
